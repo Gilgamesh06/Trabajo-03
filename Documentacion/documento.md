@@ -13,7 +13,7 @@
         docker info
         ```
 
-        ![**Docker**](/img/docker.png)
+        ![**Docker**](img/docker.png)
 
     * **Primer contenedor de prueba**
 
@@ -24,21 +24,21 @@
             ```
             * Este comadno descarga una imange de prueba, crea un contenedor y muestra un mensaje confirmando que Docker funciona correctamente
 
-        ![**Contenedor Hello world**](/img/imagen_hello_world.png)
+        ![**Contenedor Hello world**](img/imagen_hello_world.png)
 
     * **Ejecutar un servidro web en un contenedor**
 
         ```bash
         docker run -d -p 8080:80 --name mi-nginx nginx
         ```
-        ![**Ngix container**](/img/nginx_container.png)
+        ![**Ngix container**](img/nginx_container.png)
     
         * Ingresar
 
             ```bash
             http://localhost:8080
             ```
-        ![**Nginx**](/img/nginx.png)
+        ![**Nginx**](img/nginx.png)
 
     
     * **Ejecutar dos contenedores para comprender puertos**
@@ -50,7 +50,7 @@
             docker run -d -p 8089:80 --name nginx2 nginx
             ```
         
-            ![**Dos contenedores de Nginx**](/img/dos_contenedores.png)
+            ![**Dos contenedores de Nginx**](img/dos_contenedores.png)
 
         * **Probar en navegador**
 
@@ -59,7 +59,7 @@
             http://localhost:8089
             ```
 
-            ![**Nginx con cambio de puerto**](/img/nginx_en_puerto_8089.png)
+            ![**Nginx con cambio de puerto**](img/nginx_en_puerto_8089.png)
 
             * Ambos contenedores usan internamente el puerto 80, pero el host necesita puertos distintos
 

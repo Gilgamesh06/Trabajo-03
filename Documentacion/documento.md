@@ -88,7 +88,97 @@
                 ```
                 * Esto se hace proque el contenedor está aislado y su peurto interno no es visible automaticamente desde el host. Docker crea una redirección entre el puerto del computador y el puerto del contenedor
 
+    * **Creacion de binario demoacamdemico**
+
+        ```bash
+        mvn clean package
+        ```
+
+        ![**mvc clean package**](/Documentacion/img/ejecucion_maven.png)
+
+    * **Crear Dockerfile**
+
+        [**Dockerfile**](/demoacademico/Dockerfile)
+
+    * **Construir la imagen de la aplicación**
+
+        * Ejecutar
             
+            ```bash
+            docker build -t demoacademico . 
+            ```
+        * Luego verificar
+
+            ```bash
+            docker images
+            ```
+
+        ![**Imagen demoacademico**](/Documentacion/img/demoacademico_image.png)
+            
+    * **Ejecutar el contenedor de la aplicación**
+
+        * Ejecutar
+
+            ```bash
+            docker run -d -p 8080:8080 --name demoacademico demoacademico
+            ```
+        
+        * Verificar
+
+            ```bash
+            docker ps
+            docker logs demoacademico
+            ```
+
+            ![**Contenedor demoacademico**](/Documentacion/img/contenedor_demoacademico.png)
+
+        * Probar en navegador o Postman
+
+            ```bash
+            http://localhost:8080
+            ```
+
+            ![**vista del swagger**](/Documentacion/img/swagger_demoacademico.png)
+
+    * **Ejecutar Docker Compose**
+
+        ```bash
+        docker compose up -d
+        ```
+
+        ![**Docker Compose**](/Documentacion/img/ejecucion_docker_compose.png)
+
+    * **Verficar Servicios**
+
+        ```bash
+        docker compose ps
+        docker ps
+        docker logs demoacademico-app
+        docker logs demoacademico-db
+        ```
+
+        ![**Verificar Contenedores**](/Documentacion/img/verificar_contenedores.png)
+
+        ![**Verificar Logs demoacademico-app**](/Documentacion/img/demoacademico-app_logs.png)
+        ![**Verificar Logs demoacademico-db**](/Documentacion/img/demoacademico-db_logs.png)
+
+    
+    * **Verificar volumenes**
+
+        ```bash
+        docker volume ls
+        ```
+
+        ![**Verificar volumenes**](/Documentacion/img/volumenes.png)
+    
+    * **Detener Servicios**
+
+        ```bash
+        docker compose down
+        ```
+
+        ![**Detener Servicios**](/Documentacion/img/docker_compose_down.png)
+
     ## Preguntas de reflexión
 
     1. **¿Cuál es la diferencia entre imagen y contendor?**
